@@ -1,0 +1,14 @@
+PROCEDURE insertion-sort(VAR arr : ARRAY_OF INTEGER)
+VAR
+    i,j,key : INTEGER
+BEGIN
+    FOR i FROM 1 TO arr.length STEP 1  DO
+        key = arr[i]   //Element to be inserted into the sorted portion
+        j = i - 1      //Index of the last element in the sorted portion
+
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]   //Shift elements to the right
+            j = j-1
+        arr[j + 1] = key   //Insert the element into its correct position
+    END_FOR
+END
